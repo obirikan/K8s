@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: service
+metadata: 
+ name: mongo-express
+ labels: 
+   app: mongo-express
+spec: 
+ replicas: 1
+ selector:
+  matchLabels:
+   app: mongo-express
+ template:
+  metadata:
+   labels:
+    app: mongo-express
+  spec:
+   containers:
+    - name: mongo-express
+      image: mongo-express 
